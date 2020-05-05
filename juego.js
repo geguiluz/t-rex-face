@@ -59,7 +59,7 @@ var nivel = {
   marcador: 1,
 };
 var cactus = { x: ancho + 100, y: suelo };
-var nube = { x: 400, y: 10, velocidad: 1 };
+var nube = { x: 400, y: 10, velocidad: 1, subiendo: true };
 var suelog = { x: 0, y: suelo + 30 };
 
 function dibujaRex() {
@@ -103,6 +103,14 @@ function logicaNube() {
     nube.x = ancho + 100;
   } else {
     nube.x -= nube.velocidad;
+  }
+  console.log(nube.y, nube.subiendo);
+  nube.subiendo ? nube.y-- : nube.y++;
+  if (nube.y < 1) {
+    console.log('Ya llegaste a cero');
+    nube.subiendo = false;
+  } else if (nube.y > 30) {
+    nube.subiendo = true;
   }
 }
 
