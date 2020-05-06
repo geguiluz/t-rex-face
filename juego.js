@@ -105,7 +105,12 @@ function logicaNube() {
     nube.x -= nube.velocidad;
   }
   console.log(nube.y, nube.subiendo);
-  nube.subiendo ? nube.y-- : nube.y++;
+  // nube.subiendo ? nube.y-- : nube.y++;
+  if (nube.subiendo) {
+    nube.y = nube.y - 1;
+  } else {
+    nube.y = nube.y + 1;
+  }
   if (nube.y < 1) {
     console.log('Ya llegaste a cero');
     nube.subiendo = false;
@@ -120,7 +125,7 @@ function saltar() {
 }
 
 function gravedad() {
-  if (trex.saltando == true) {
+  if (trex.saltando) {
     if (trex.y - trex.vy - trex.gravedad > suelo) {
       trex.saltando = false;
       trex.vy = 0;
