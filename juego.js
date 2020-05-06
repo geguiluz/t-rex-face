@@ -151,7 +151,7 @@ function puntuacion() {
   ctx.fillText(`Puntuación: ${nivel.puntuación}`, 471, 80);
   if (nivel.muerto == true) {
     ctx.font = '60px impact';
-    ctx.fillText(`GAME OVER`, 240, 150);
+    ctx.fillText(`ERES UN IDIOTA`, 240, 150);
   }
 }
 
